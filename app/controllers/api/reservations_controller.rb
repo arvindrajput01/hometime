@@ -1,7 +1,6 @@
 class Api::ReservationsController < ApplicationController
   def create
     if request.put? || request.post?
-    	debugger
       if params[:reservation][:reservation_code].present?
         handle_one_reservation_payload
       elsif params[:reservation][:code].present?
@@ -31,7 +30,6 @@ private
   end
 
   def handle_other_reservations_payload
-  	debugger
 	 reservation_data = params.require(:reservation).permit(:code, :start_date, :end_date, :expected_payout_amount, :guest_email, :guest_first_name, :guest_last_name, :listing_security_price_accurate, :host_currency, :nights, :number_of_guests, :status_type, :total_paid_amount_accurate)
 
 	  guest_data = {
@@ -40,7 +38,6 @@ private
 	    last_name: params[:reservation][:guest_last_name],
 	    phone: params[:reservation][:guest_phone_numbers]
 	  }
-	  debugger
 	  @reservation = Reservation.find_or_initialize_by(reservation_code: reservation_data[:code])
 	  @reservation.attributes = {
 	    reservation_code: reservation_data[:code],

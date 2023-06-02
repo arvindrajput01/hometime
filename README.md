@@ -53,3 +53,22 @@ Things you may want to cover:
 
 
 
+* Steps to run the api
+* Open a terminal or command prompt.
+
+* Navigate to the root directory of the Rails API project.
+		cd hometime
+*Install the required dependencies by running the following command
+* navigate to the project directory for example
+	bundle install
+* create database and run migration
+	rails db:create
+	rails db:migrate
+* I am not using the seed data so do not need to run
+  rake db:seed
+* load the rvm if ne
+	source ~/.rvm/scripts/rvm
+* start the rails server
+ bin/rails s
+* hit below url to book the reservation
+  http://localhost:3000/api/reservations/
