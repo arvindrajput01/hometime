@@ -23,5 +23,11 @@ Things you may want to cover:
 
 * ...
 
+* generating the resevation model in short we can use rails g
+	rails generate model reservation reservation_code:string start_date:datetime end_date:datetime nights:integer guests:integer adults:integer children:integer infants:integer status:string currency:string payout_price:decimal security_price:decimal total_price:decimal localized_description:string guest_id: integer
 
-rails generate model reservation reservation_code: string start_date: datetime end_date:datetime nights:integer guests:integer adults:integer children:integer infants:integer status:string currency:string payout_price:decimal security_price:decimal total_price:decimal localized_description:string guest_id: integer
+* generating the guest model
+	rails g model guest first_name:string last_name:string email:string phone_one:string phone_two:string
+* run below commnad to create database if already not created
+	bundle exec rake db:create
+
