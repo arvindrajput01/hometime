@@ -36,3 +36,20 @@ Things you may want to cover:
 
 * generate reservation controller
 	rails generate controller Api::Reservaions --api
+
+* when testing the spec
+	
+	* set the database environment test
+	bin/rails db:environment:set RAILS_ENV=test
+	* create database
+	  bundle exec rake db:create
+
+	* run all the migration on test database
+	bundle exec rake db:migrate RAILS_ENV=test
+	* run specific method of spec test
+	bundle exec rspec spec/models/guest_spec.rb --example "create"
+   * generate spec for controller
+   	bin/rails generate rspec:controller api/reservations
+
+
+

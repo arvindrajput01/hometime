@@ -36,7 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_091936) do
     t.decimal "total_price", precision: 10
     t.string "localized_description"
     t.string "guest_id"
-    t.string "integer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
