@@ -31,3 +31,8 @@ Things you may want to cover:
 * run below commnad to create database if already not created
 	bundle exec rake db:create
 
+* run the migration script
+ bundle exec rake db:migrate
+
+* generate reservation controller
+	rails generate controller Api::Reservaions --api

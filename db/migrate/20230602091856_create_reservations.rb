@@ -1,7 +1,7 @@
 class CreateReservations < ActiveRecord::Migration[7.0]
-  def change
+  def up
     create_table :reservations do |t|
-      t.string :reservation_code
+      t.string :reservation_code, :unique => true, :required => true
       t.datetime :start_date
       t.datetime :end_date
       t.integer :nights
@@ -16,9 +16,12 @@ class CreateReservations < ActiveRecord::Migration[7.0]
       t.decimal :total_price
       t.string :localized_description
       t.string :guest_id
-      t.string :integer
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :reservations
   end
 end
